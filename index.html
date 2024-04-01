@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather-APP</title>
+    <link rel="stylesheet" href="./src/style.css">
+    <meta name="description"
+        content="Explore real-time and forecasted weather conditions with our intuitive Weather App. Stay informed about temperature, humidity, and precipitation, plan your activities, and receive alerts for severe weather events. Your go-to source for accurate and up-to-date weather information.">
+    <meta name="Robin" content="Your Name">
+    <script type='text/javascript' src='http://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=Atm3FL7yEPbwHzwydCKc6x5S4co2frvIfXkwyv3KGqdUvBRCY9fhRvqVfvZCUsVe' async defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="wrapper">
+            <header class="navbar">
+                <div class="icon">Weather</div>
+                <div class="searchbox">
+                    <form id="searchbar">
+                        <input type="text" placeholder="City Name" name="searchText">
+                        <button type="submit" id="searchQuery" class="btn"> <img src="./assets/media/search.png"
+                                alt="Search Icon">
+                        </button>
+                    </form>
+                </div>
+            </header>
+            <main class="main">
+                <div id="banner" class="mainReport shadow br-radius">
+                    <div class="mainData">
+                        <div class="tempAndCity">
+                            <p></span><span id="temp"></span>&deg;C</p>
+                            <p id="city"></p>
+                        </div>
+                        <div class="timeAndZone">
+                            <div class="desc-content">
+                                <p id="time"></p>
+                                <div class="desc-box">
+                                    <div class="desc-icon"><img id="descicon"
+                                            src="https://openweathermap.org/img/wn/11n@2x.png" alt=""></div>
+                                    <p id="weather-desc"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="miscellaneous">
+                    <section class="currentData">
+                        <div class="parameterCard shadow br-radius">
+                            <ul class="item left">
+                                <li>
+                                    <p class="title">Feel like</p>
+                                    <p class="value"><span id="feel-like"></span>&deg;C</p>
+                                </li>
+                                <li>
+                                    <p class="title">Temp Min</p>
+                                    <p class="value"><span id="temp-min"></span>&deg;C</p>
+                                </li>
+                                <li>
+                                    <p class="title">Temp Max</p>
+                                    <p class="value"><span id="temp-max"></span>&deg;C</p>
+                                </li>
+                            </ul>
+                            <div class="item vertical-line"></div>
+                            <ul class="item right">
+                                <li>
+                                    <p class="title">Sunrise</p>
+                                    <p class="value"><span id="sunrise"></span></p>
+                                </li>
+                                <li>
+                                    <p class="title">Sunset</p>
+                                    <p class="value"><span id="sunset"></span></p>
+                                </li>
+                                <li>
+                                    <p class="title">Wind Speed</p>
+                                    <p class="value"><span id="windSpeed"></span>Kmph</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="aqi shadow br-radius">
+                            <ul>
+                                <li>Visibility</li>
+                                <li><span id="vis-value"></span> km</li>
+                            </ul>
+                            <ul>
+                                <li>Humidity</li>
+                                <li><span id="humidity"></span> %</li>
+                            </ul>
+                        </div>
+                    </section>
+                    <section class="forecast-Container shadow br-radius">
+                        <div id="map" onload="getMap()" class="forecast">
+                           
+                    </section>
+                </div>
+            </main>
+            <footer class="footer">
+                <div>
+                    <p>All Rights Reserved &#169; 2024</p>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+<script src="./src/script.js"></script>
+<script src="./config/config.js"></script>
+</html>
