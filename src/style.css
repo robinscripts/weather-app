@@ -70,7 +70,7 @@
 #searchbar input {
     padding: 8px;
     border-radius: 10px;
-    width: 400px;
+    /* width: 400px; */
     position: relative;
     font-size: 1.15rem;
     border: 1px solid var(--transBlack);
