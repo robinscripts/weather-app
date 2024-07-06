@@ -1,0 +1,239 @@
+:root {
+    --darkbl: #2b7da1ff;
+    --lightbl: rgb(218, 240, 246);
+    --transBlack: #767676d4;
+    --whitish: #FFFAFA;
+
+}
+
+@font-face {
+    font-family: 'PT-Sans';
+    src: url('../assets/fonts/PT_Sans_Narrow/PTSansNarrow-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PT-Sans';
+    src: url('../assets/fonts/PT_Sans_Narrow/PTSansNarrow-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'PT-Sans', Arial, sans-serif;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+.shadow {
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+}
+
+.br-radius {
+    border-radius: 10px;
+}
+
+.container {
+    background-color: var(--lightbl);
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+.wrapper {
+    width: 90vw;
+    margin: auto;
+}
+
+/* ----------- header start ------------- */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 25px 0;
+}
+
+.icon {
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.searchbox {
+    position: relative;
+    display: flex;
+    align-self: center;
+}
+
+#searchbar input {
+    padding: 8px;
+    border-radius: 10px;
+    width: 400px;
+    position: relative;
+    font-size: 1.15rem;
+    border: 1px solid var(--transBlack);
+    background-color: var(--whitish);
+}
+
+#searchbar input::placeholder {
+    color: var(--transBlack);
+}
+
+#searchbar .btn {
+    position: absolute;
+    border: none;
+    background: inherit;
+    right: 0;
+    height: 100%;
+    width: fit-content;
+    padding: 8px
+}
+
+#searchbar .btn img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+/* ----------- header end ------------- */
+.mainReport,
+.miscellaneous {
+    margin-bottom: 70px;
+}
+
+.mainReport {
+    background-size: cover;
+    background-position: center;
+    color: var(--whitish);
+    background-image: url('../assets/media/bd1.jpg');
+    padding: 30px 55px;
+    position: relative;
+    z-index: 1;
+}
+
+.mainReport::after {
+    z-index: -1;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.197);
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.mainData {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    height: 30vw;
+    align-content: end;
+    font-weight: bold;
+    font-size: calc(16px + 1vw);
+}
+
+.tempAndCity{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.timeAndZone {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: right;
+}
+
+.desc-content{
+    grid-column-start: 5;
+}
+
+.desc-box{
+    display: flex;
+    align-items: end;
+}
+
+.desc-icon {
+    display: flex;
+    justify-content: end;
+    align-items: baseline;
+}
+
+.desc-icon img{
+    width: 50%;
+    height: 52%;
+    object-fit: cover;
+}
+
+.miscellaneous {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 5vw;
+}
+
+.parameterCard {
+    display: grid;
+    grid-template-columns: 1fr 1px 1fr;
+    background-color: var(--whitish);
+    margin-bottom: 40px;
+}
+
+.item {
+    padding: 32px 0;
+}
+
+.parameterCard ul {
+    width: fit-content;
+    margin: auto;
+}
+
+.vertical-line {
+    margin: 32px 0;
+    background-color: var(--transBlack);
+}
+
+.parameterCard .title {
+    margin-bottom: 4px;
+    font-size: 0.95rem;
+}
+
+.parameterCard .value {
+    color: var(--darkbl);
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 14px;
+}
+
+.aqi {
+    background-color: var(--darkbl);
+    padding: 30px 0;
+    color: var(--whitish);
+    font-weight: bold;
+    font-size: 1.1rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+.forecast-Container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--whitish);
+}
+
+.footer div {
+    border-top: 1px solid black;
+    text-align: center;
+}
+
+@media (max-width:720px) {
+    .miscellaneous {
+        grid-template-columns: 1fr;
+    }
+
+    .currentData {
+        order: 2;
+    }
+}
