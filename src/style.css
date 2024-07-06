@@ -237,3 +237,9 @@
         order: 2;
     }
 }
+
+@media (max-width:320px) {
+    #searchbar input {
+        width: 150px;
+    }
+}
